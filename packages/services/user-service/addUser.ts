@@ -1,6 +1,5 @@
-import fetcher from '../fetcher'
-
 import { IuserParams } from './interfaceUser'
+import fetcher from '../fetcher'
 
 export const addUser = async (userParams: IuserParams) => {
   const fetchConfig = {
