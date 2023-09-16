@@ -1,0 +1,14 @@
+{
+  "name": "style",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/tailwind.css",
+  "files": [
+    "./src/tailwind.css"
+  ],
+  "devDependencies": {
+    "postcss": "^8.4.18",
+    "tailwindcss": "^3.2.1",
+    "tailwind-config": "workspace:*"
+  }
+}

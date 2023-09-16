@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "env-cmd turbo run build",
+    "dev": "env-cmd turbo run dev --parallel",
+    "dev:authentication": "env-cmd turbo run dev --filter=authentication",
+    "dev:frontliner": "env-cmd turbo run dev --filter=frontliner",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint-config-custom": "workspace:*",
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "dependencies": {
+    "env-cmd": "^10.1.0"
+  },
+  "name": "microfeturbo",
+  "packageManager": "pnpm@7.14.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
