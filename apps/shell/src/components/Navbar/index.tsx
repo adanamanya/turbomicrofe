@@ -4,10 +4,8 @@ import { Navbar } from 'ui'
 
 import useNavbar from '@/hooks/components/Navbar/useNavbar'
 
-// import TransactionMenu from './Menu/TransactionMenu'
-
 const NavbarWrapper = () => {
-  const { activePath, showSubmenu, minimize, toggleMinimizeNavbar, expandSubmenu } = useNavbar()
+  const { activePath, minimize, toggleMinimizeNavbar } = useNavbar()
   return (
     <div>
       <Navbar minimize={minimize} toggleMinimizeNavbar={toggleMinimizeNavbar} activePath={activePath} />

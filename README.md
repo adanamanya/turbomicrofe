@@ -13,6 +13,7 @@ This Turborepo includes the following packages/apps:
     - shell (header and footer)
     - form (form to update user)
     - user-list (showing list of)
+    - home (homepage)
 - `ui`: a stub React component library shared by `form` and `shell`, and `user-list` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo

@@ -4,6 +4,7 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import Link from 'next/link'
 
+import SideMenu from './SideMenu'
 // import TransactionMenu from './Menu/TransactionMenu'
 
 interface InavbarHooks {
@@ -33,12 +34,7 @@ const Navbar = ({ minimize, toggleMinimizeNavbar, activePath }: InavbarHooks) =>
         </button>
       </div>
       {/* navigation menu */}
-      {/* <TransactionMenu
-        activePath={activePath}
-        minimize={minimize}
-        showSubmenu={showSubmenu}
-        expandSubmenu={expandSubmenu}
-      /> */}
+      <SideMenu minimize={minimize} activePath={activePath} />
     </div>
   )
 }

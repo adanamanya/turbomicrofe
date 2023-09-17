@@ -86,6 +86,73 @@ importers:
         specifier: ^4.5.3
         version: 4.9.5
 
+  apps/home:
+    dependencies:
+      next:
+        specifier: 13.0.1
+        version: 13.0.1(@babel/core@7.22.19)(react-dom@18.2.0)(react@18.2.0)
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-div-100vh:
+        specifier: ^0.7.0
+        version: 0.7.0(react@18.2.0)
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+      services:
+        specifier: workspace:*
+        version: link:../../packages/services
+      store:
+        specifier: workspace:*
+        version: link:../../packages/store
+      style:
+        specifier: workspace:*
+        version: link:../../packages/style
+      ui:
+        specifier: workspace:*
+        version: link:../../packages/ui
+    devDependencies:
+      '@babel/core':
+        specifier: ^7.0.0
+        version: 7.22.19
+      '@types/node':
+        specifier: ^17.0.12
+        version: 17.0.45
+      '@types/react':
+        specifier: ^18.0.25
+        version: 18.2.21
+      '@types/react-dom':
+        specifier: ^18.0.7
+        version: 18.2.7
+      autoprefixer:
+        specifier: ^10.4.13
+        version: 10.4.15(postcss@8.4.29)
+      babel-eslint:
+        specifier: ^10.1.0
+        version: 10.1.0(eslint@8.49.0)
+      eslint:
+        specifier: ^8.9.0
+        version: 8.49.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../../packages/eslint-config-custom
+      postcss:
+        specifier: ^8.4.18
+        version: 8.4.29
+      tailwind-config:
+        specifier: workspace:*
+        version: link:../../packages/tailwind-config
+      tailwindcss:
+        specifier: ^3.2.1
+        version: 3.3.3
+      tsconfig:
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
+      typescript:
+        specifier: ^4.5.3
+        version: 4.9.5
+
   apps/shell:
     dependencies:
       next:

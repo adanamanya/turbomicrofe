@@ -33,6 +33,7 @@ module.exports = {
       orange: '#F2994A',
       greycontent: '#E9EBEE',
       btcorange: '#F7941D',
+      lightorange: '#FEA801',
       main: {
         primary: '#61C7B5',
         darker: '#3E8CB9',
