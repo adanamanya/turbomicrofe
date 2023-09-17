@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import DataTable, { TableColumn } from 'react-data-table-component'
 import { deleteUser } from 'services/user-service'
 
+import CreateUserModal from '../../Modal/CreateUserModal' // Import the CreateUserModal component
 import UpdateUserModal from '../../Modal/UpdateUserModal'
 import Toast from '../../Toast'
 import { IUser } from '../Interface/UserInterfaces'
@@ -23,6 +24,15 @@ const UserTable: React.FC<IUserTableProps> = ({ userData }) => {
   const closeUpdateModal = () => {
     setSelectedUser(null)
     setShowUpdateModal(false)
+  }
+  // Function to open the create modal
+  const openCreateModal = () => {
+    setShowCreateForm(true)
+  }
+
+  // Function to close the create modal
+  const closeCreateModal = () => {
+    setShowCreateForm(false)
   }
   const columns: TableColumn<IUser>[] = [
     {
@@ -92,6 +102,7 @@ const UserTable: React.FC<IUserTableProps> = ({ userData }) => {
   }
   const handleCreateClick = () => {
     // Implement logic to show the create form/modal
+    console.log('eheheh')
     setShowCreateForm(true)
   }
   const handleDelete = (userId: any, userName: string) => {
@@ -119,7 +130,10 @@ const UserTable: React.FC<IUserTableProps> = ({ userData }) => {
         </button>
       </div>
 
-      {showCreateForm && <div></div>}
+      {showCreateForm && (
+        // Render the Create User modal when showCreateForm is true
+        <CreateUserModal onClose={closeCreateModal} />
+      )}
       {userData && (
         <>
           <DataTable title="Users" columns={columns} data={userData} pagination paginationPerPage={10} />
