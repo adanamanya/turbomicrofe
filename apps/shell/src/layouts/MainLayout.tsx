@@ -17,7 +17,7 @@ const MainLayout = ({ children }: IMainLayout) => {
       <div className="flex flex-row grow overflow-auto">
         <Navbar />
         {/* dashboard content */}
-        <div className="flex flex-1 bg-light-3 p-6 overflow-auto">{children}</div>
+        <div className="flex flex-1 bg-greycontent p-6 overflow-auto">{children}</div>
       </div>
       <Footer />
     </Div100vh>

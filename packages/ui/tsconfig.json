@@ -1,5 +1,11 @@
 {
-  "extends": "tsconfig/react-library.json",
+  "extends": "tsconfig/custom.json",
   "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "exclude": ["dist", "build", "node_modules", "tailwind.config.js", "postcss.config.js"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@ui/*": ["./src/*"]
+    }
+  }
 }

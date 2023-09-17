@@ -31,6 +31,8 @@ module.exports = {
       black: '#000000',
       lightblue: '#D6EDF6',
       orange: '#F2994A',
+      greycontent: '#E9EBEE',
+      btcorange: '#F7941D',
       main: {
         primary: '#61C7B5',
         darker: '#3E8CB9',
@@ -81,6 +83,7 @@ module.exports = {
       0.5: '0.125rem',
       1: '0.25rem',
       1.5: '0.375rem',
+      1.7: '0.39rem',
       2: '0.5rem',
       3: '0.75rem',
       4: '1rem',

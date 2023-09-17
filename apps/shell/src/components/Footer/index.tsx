@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Footer = () => {
+import { Footer } from 'ui'
+
+const FooterWrapper = () => {
   return (
-    <div className="absolute bottom-0 py-3 h-10 bg-info-2 text-xs text-center text-white w-full">
-      <span>©{new Date().getFullYear()} Turbo Micro Frontend Basecode </span>
+    <div>
+      <Footer />
     </div>
   )
 }
 
-export default Footer
+export default FooterWrapper
