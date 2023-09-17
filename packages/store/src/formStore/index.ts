@@ -4,17 +4,14 @@ import create from 'zustand'
 interface IformData {
   firstName: string
   lastName: string
-  age: number
-  id: number
   maidenName: string
+  age: number
   gender: string
   email: string
   phone: string
   username: string
   password: string
   birthDate: string
-  image: string
-  eyeColor: string
 }
 
 interface IformStore {

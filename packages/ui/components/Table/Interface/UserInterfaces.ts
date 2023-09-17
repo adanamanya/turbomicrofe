@@ -22,6 +22,7 @@ export interface IUser {
   }
   domain: string
   ip: string
+  isDeleted: boolean
   address: {
     address: string
     city: string
