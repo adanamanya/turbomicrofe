@@ -1,6 +1,12 @@
-import Card from '@/components/HomeCard'
+import React from 'react'
+
+import { HomeCard } from 'ui'
 const Home = () => {
-  return <Card />
+  return (
+    <div>
+      <HomeCard />
+    </div>
+  )
 }
 
 export default Home

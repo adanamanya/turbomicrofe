@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "zustand": "^4.1.4",
-    "next": "13.0.1",
-    "services": "workspace:*"
+    "react-data-table-component": "^7.5.2",
+    "next": "13.0.1"
   }
 }

@@ -34,3 +34,5 @@ export const useFormStore = create<IformStore>((set) => ({
     set({ formData: null })
   },
 }))
+
+export default useFormStore

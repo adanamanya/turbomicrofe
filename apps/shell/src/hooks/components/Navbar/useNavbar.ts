@@ -6,11 +6,6 @@ const useNavbar = () => {
   const router = useRouter()
   const [activePath, setActivePath] = useState<string>('')
   const [minimize, setMinimize] = useState<boolean>(false)
-  const [showSubmenu, setShowSubmenu] = useState<boolean>(true)
-
-  const expandSubmenu = () => {
-    setShowSubmenu(!showSubmenu)
-  }
 
   const toggleMinimizeNavbar = () => {
     setMinimize(!minimize)
@@ -22,9 +17,7 @@ const useNavbar = () => {
 
   return {
     activePath,
-    showSubmenu,
     minimize,
-    expandSubmenu,
     toggleMinimizeNavbar,
   }
 }

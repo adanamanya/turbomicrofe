@@ -29,7 +29,7 @@ const Navbar = ({ minimize, toggleMinimizeNavbar, activePath }: InavbarHooks) =>
             Home
           </Link>
         )}
-        <button className="p-0.5 rounded-full text-white outline-none" onClick={toggleMinimizeNavbar}>
+        <button className="bg-lightorange p-0.5 rounded-full text-white outline-none" onClick={toggleMinimizeNavbar}>
           {minimize ? <ArrowForwardIcon fontSize="small" /> : <ArrowBackIcon fontSize="small" />}
         </button>
       </div>

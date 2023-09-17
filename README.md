@@ -11,8 +11,7 @@ This Turborepo includes the following packages/apps:
 
 - `app`: micro frontend app
     - shell (header and footer)
-    - form (form to update user)
-    - user-list (showing list of)
+    - user-list (showing list of user)
     - home (homepage)
 - `ui`: a stub React component library shared by `form` and `shell`, and `user-list` application
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)

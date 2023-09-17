@@ -1,11 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
+import { ReactElement, Suspense } from 'react'
 
-import { ReactElement } from 'react'
+import dynamic from 'next/dynamic'
 
-import Card from '@/components/Card'
+// Wrap the dynamic import in a no-ssr component
+const RemoteHome = dynamic(() => import('@/apps/home/src/pages/index'), {
+  ssr: false,
+})
 import MainLayout from '@/layouts/MainLayout'
 const Home = () => {
-  return <Card />
+  return (
+    <div className="card w-full">
+      <Suspense fallback={<p>Loading...</p>}>
+        <RemoteHome />
+      </Suspense>
+    </div>
+  )
 }
 
 Home.getLayout = (page: ReactElement) => {
