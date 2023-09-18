@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "env-cmd": "^10.1.0",
-    "@testing-library/react": "^13.0.0"
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/react-hooks": "latest",
+    "next": "13.0.1"
   },
   "name": "microfeturbo",
   "packageManager": "pnpm@7.14.1",
