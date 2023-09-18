@@ -46,6 +46,12 @@ const CreateUserModal: React.FC<CreateUserModalProps> = ({ onClose }) => {
   }
 
   useEffect(() => {
+    // Check if all required fields are filled
+    const isFormValid = Object.values(formData).every((value) => !!value)
+    setIsSubmitDisabled(!isFormValid)
+  }, [formData])
+
+  useEffect(() => {
     if (showSuccessToast) {
       const timer = setTimeout(() => {
         onClose()
@@ -62,7 +68,7 @@ const CreateUserModal: React.FC<CreateUserModalProps> = ({ onClose }) => {
       <div className="fixed inset-0 bg-black opacity-50 z-40"></div>
 
       <div className="bg-white w-96 p-6 rounded-lg shadow-lg relative z-50">
-        <h2 className="text-2xl font-bold mb-4">Create User</h2>
+        <h2 className="text-2xl font-bold mb-4">Create User Form</h2>
         <form>
           <div className="mb-4">
             <label className="block text-sm font-medium text-dark-1">Username</label>

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { fireEvent, render, waitFor } from '@testing-library/react'
 
+import { deleteUser } from '../packages/services/user-service/deleteUser'
 import UserTable from '../packages/ui/components/Table/UserTable'
 import '@testing-library/jest-dom/extend-expect' // Import jest-dom for additional matchers
 
@@ -33,7 +34,7 @@ describe('UserTable component', () => {
     fireEvent.click(createButton)
 
     // Assert that the Create User modal content is rendered
-    expect(getByText('Create User Modal Content')).toBeInTheDocument() // Replace with actual modal content check
+    expect(getByText('Create User Form')).toBeInTheDocument()
   })
 
   it('deletes a user when the "Delete" button is clicked', async () => {
