@@ -1,10 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "build": "env-cmd -f .env turbo run build",
+    "build": "env-cmd turbo run build",
     "dev": "env-cmd turbo run dev --parallel",
-    "dev:authentication": "env-cmd turbo run dev --filter=authentication",
-    "dev:frontliner": "env-cmd turbo run dev --filter=frontliner",
+    "dev:shell": "env-cmd turbo run dev --filter=shell",
+    "dev:userlist": "env-cmd turbo run dev --filter=user-list",
+    "dev:home": "env-cmd turbo run dev --filter=home",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "test": "turbo run test",

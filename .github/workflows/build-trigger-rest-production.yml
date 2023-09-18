@@ -1,0 +1,36 @@
+name: Deploy to Vercel Turbo Micro FE
+
+on:
+  push:
+    branches:
+      - main # Adjust the branch name as needed
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js and pnpm
+        uses: pnpm/actions/setup-node@v1
+        with:
+          node-version: 18 
+          package-manager: pnpm
+
+      - name: Install dependencies
+        run: |
+          pnpm install
+
+      - name: Build the Next.js app
+        run: |
+          pnpm build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-deploy@v2
+        with:
+          vercelToken: ${{ secrets.VERCEL_TOKEN }}
+          githubToken: ${{ secrets.GH_TOKEN }}
+          orgId: ${{ secrets.ORG_ID }}
+          projectId: ${{ secrets.PROJECT_ID }}
