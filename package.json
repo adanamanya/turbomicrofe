@@ -23,6 +23,7 @@
   "dependencies": {
     "env-cmd": "^10.1.0",
     "@testing-library/react": "^13.0.0",
+    "@testing-library/jest-dom": "latest",
     "@testing-library/react-hooks": "latest",
     "next": "13.0.1"
   },
