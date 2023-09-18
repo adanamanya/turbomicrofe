@@ -10,9 +10,8 @@
     },
     "dev": {
       "cache": false
-    }
+    },
+    "test": {}
   },
-  "globalEnv": [
-    "NEXT_PUBLIC_BASE_URL_USER_SERVICE"
-  ]
+  "globalEnv": ["NEXT_PUBLIC_BASE_URL_USER_SERVICE"]
 }

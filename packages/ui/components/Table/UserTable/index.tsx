@@ -102,8 +102,7 @@ const UserTable: React.FC<IUserTableProps> = ({ userData }) => {
   }
   const handleCreateClick = () => {
     // Implement logic to show the create form/modal
-    console.log('eheheh')
-    setShowCreateForm(true)
+    openCreateModal()
   }
   const handleDelete = (userId: any, userName: string) => {
     // Implement your delete logic here

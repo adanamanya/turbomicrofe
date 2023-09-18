@@ -6,15 +6,22 @@
     "dev:authentication": "env-cmd turbo run dev --filter=authentication",
     "dev:frontliner": "env-cmd turbo run dev --filter=frontliner",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "react": "^18.2.0",
+    "@types/jest": "^27.0.0",
+    "jest": "^27.4.3",
+    "ts-jest": "^27.0.7"
   },
   "dependencies": {
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "@testing-library/react": "^13.0.0"
   },
   "name": "microfeturbo",
   "packageManager": "pnpm@7.14.1",

@@ -22,12 +22,21 @@ const UpdateUserModal: React.FC<UpdateUserModalProps> = ({ user, onClose }) => {
 
   const [showPassword, setShowPassword] = useState(false) // Initially hide the password
 
+  // State variable to control the submit button
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(false)
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData({
       ...formData,
       [name]: value,
     })
+
+    // Check if any required field is empty
+    const requiredFields = ['username', 'firstName', 'lastName', 'phone', 'password']
+    const isAnyFieldEmpty = requiredFields.some((field) => !formData[field])
+
+    setIsSubmitDisabled(isAnyFieldEmpty)
   }
 
   const handleSubmit = () => {
@@ -42,6 +51,12 @@ const UpdateUserModal: React.FC<UpdateUserModalProps> = ({ user, onClose }) => {
         console.error(`Error updating user: ${error.message}`)
       })
   }
+
+  useEffect(() => {
+    // Check if all required fields are filled
+    const isFormValid = Object.values(formData).every((value) => !!value)
+    setIsSubmitDisabled(!isFormValid)
+  }, [formData])
 
   useEffect(() => {
     if (showSuccessToast) {
@@ -131,7 +146,10 @@ const UpdateUserModal: React.FC<UpdateUserModalProps> = ({ user, onClose }) => {
             <button
               type="button"
               onClick={handleSubmit}
-              className="bg-btcorange text-white px-4 py-2 rounded hover:bg-lightorange focus:outline-none"
+              className={`${
+                isSubmitDisabled ? 'bg-dark-3 cursor-not-allowed' : 'bg-btcorange hover:bg-lightorange'
+              } text-white px-4 py-2 rounded focus:outline-none`}
+              disabled={isSubmitDisabled}
             >
               Submit
             </button>

@@ -9,7 +9,6 @@ interface CreateUserModalProps {
 }
 
 const CreateUserModal: React.FC<CreateUserModalProps> = ({ onClose }) => {
-  // State to store form data and control the visibility of the success toast
   const [formData, setFormData] = useState({
     username: '',
     firstName: '',
@@ -19,52 +18,49 @@ const CreateUserModal: React.FC<CreateUserModalProps> = ({ onClose }) => {
   })
   const [showPassword, setShowPassword] = useState(false)
   const [showSuccessToast, setShowSuccessToast] = useState(false)
+  const [isSubmitDisabled, setIsSubmitDisabled] = useState(true)
 
-  // Function to handle input changes and update formData state
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
+
     setFormData({
       ...formData,
       [name]: value,
     })
+
+    // Check if any required field is empty
+    const requiredFields = ['username', 'firstName', 'lastName', 'phone', 'password']
+    const isAnyFieldEmpty = requiredFields.some((field) => !formData[field])
+
+    setIsSubmitDisabled(isAnyFieldEmpty)
   }
 
-  // Function to handle form submission
   const handleSubmit = () => {
-    // Implement your create logic here using the createUser service
     addUser(formData)
       .then(() => {
-        // Show success toast and close the modal
         setShowSuccessToast(true)
       })
       .catch((error) => {
-        // Handle error if the create fails
         console.error(`Error creating user: ${error.message}`)
       })
   }
+
   useEffect(() => {
     if (showSuccessToast) {
-      // Delay the execution of onClose() by a few seconds
       const timer = setTimeout(() => {
         onClose()
       }, 699) // Adjust the time delay as needed (e.g., 3000 milliseconds or 3 seconds)
 
-      // Clear the timer when the component unmounts
       return () => clearTimeout(timer)
     }
   }, [showSuccessToast, onClose])
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50">
-      {showSuccessToast && (
-        // Render the success toast if showSuccessToast is true
-        <Toast message="User created successfully." onClose={() => setShowSuccessToast(false)} />
-      )}
+      {showSuccessToast && <Toast message="User created successfully." onClose={() => setShowSuccessToast(false)} />}
 
-      {/* Overlay */}
       <div className="fixed inset-0 bg-black opacity-50 z-40"></div>
 
-      {/* Modal */}
       <div className="bg-white w-96 p-6 rounded-lg shadow-lg relative z-50">
         <h2 className="text-2xl font-bold mb-4">Create User</h2>
         <form>
@@ -136,7 +132,10 @@ const CreateUserModal: React.FC<CreateUserModalProps> = ({ onClose }) => {
             <button
               type="button"
               onClick={handleSubmit}
-              className="bg-btcorange text-white px-4 py-2 rounded hover:bg-lightorange focus:outline-none"
+              className={`${
+                isSubmitDisabled ? 'bg-dark-3 cursor-not-allowed' : 'bg-btcorange hover:bg-lightorange'
+              } text-white px-4 py-2 rounded focus:outline-none`}
+              disabled={isSubmitDisabled}
             >
               Submit
             </button>
