@@ -13,11 +13,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js and pnpm
-        uses: pnpm/actions/setup-node@v1
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 18 
-          package-manager: pnpm
+          node-version: 18
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 7
+          run_install: false
 
       - name: Install dependencies
         run: |
@@ -28,7 +33,7 @@ jobs:
           pnpm build
 
       - name: Deploy to Vercel
-        uses: amondnet/vercel-deploy@v2
+        uses: amondnet/vercel-action@v20
         with:
           vercelToken: ${{ secrets.VERCEL_TOKEN }}
           githubToken: ${{ secrets.GH_TOKEN }}
