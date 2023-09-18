@@ -16,6 +16,7 @@
     "nprogress": "^0.2.0",
     "react-div-100vh": "^0.7.0",
     "react-dom": "18.2.0",
+    "lottie-react": "2.4.0",
     "store": "workspace:*",
     "services": "workspace:*",
     "style": "workspace:*",
